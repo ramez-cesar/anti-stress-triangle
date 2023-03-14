@@ -65,12 +65,12 @@ function instructionGenerator() {
 function startCounter() {
     if(counter.textContent === '') {
         counter.textContent = 1
-        intervalId = setInterval(() => {
+        intervalIdCounter = setInterval(() => {
             counter.textContent = initialCounter
             initialCounter++
         }, 22000)
     } else {
-        intervalId = setInterval(() => {
+        intervalIdCounter = setInterval(() => {
             counter.textContent = initialCounter
             initialCounter++
         }, 22000)
