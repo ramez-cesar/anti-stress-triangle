@@ -18,12 +18,6 @@ main p, a, h4, button {
     letter-spacing: .3px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 main .description-container {
     width: 100%;
     height: 230px;
@@ -55,7 +49,7 @@ main .description-container h1 span {
 }
 
 main .description-container p {
-    margin-top: 8px;
+    margin-top: 10px;
     color: #CBE4DE;
     word-spacing: 2px;
     letter-spacing: .5px;
@@ -89,22 +83,19 @@ main .instruction-container h2 {
 main .instruction-container > div {
     margin: 0 35px;
     padding: 15px 20px;
-    border: 1px solid #567189;
+    border: 1px solid #b5b5b5;
     border-radius: 8px;
     box-shadow: 5px 5px 8px #567189;
     background-color: #c7c7c7;
-    transition: 1s;
 }
 
 main .instruction-container > div h4 {
-    font-size: 1.3rem;
     margin-bottom: 15px;
 }
 
-
 main .effects-description-container {
     margin-top: 40px;
-    padding: 55px 25px 35px;
+    padding: 60px 25px 35px;
     background-color: #bfbfbf;
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
 }
@@ -118,11 +109,7 @@ main .effects-description-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: #090015; */
-    background: radial-gradient(circle, #02002c 10%, transparent 11%),radial-gradient(circle at bottom left, #02002c 5%, transparent 6%),radial-gradient(circle at bottom right, #02002c 5%, transparent 6%),radial-gradient(circle at top left, #02002c 5%, transparent 6%),radial-gradient(circle at top right, #02002c 5%, transparent 6%);
-        background-size: 3em 3em;
-        background-color: #090015;
-        opacity: 1
+    background-color: #090015;
 }
 
 .container-triangle .instructions {
@@ -135,7 +122,7 @@ main .effects-description-container {
     letter-spacing: .5px;
 }
 
-.container-triangle span {
+.container-triangle .counter {
     top: 300px;
     font-size: 2rem;
     font-weight: 800;
@@ -153,13 +140,15 @@ main .effects-description-container {
 
 .container-triangle .triangle img {
     width: 250px;
+    filter: drop-shadow(0px 0px 30px #A91079);
 }
 
 .container-triangle .triangle .running-circle {
     width: 17px;
     height: 17px;
-    top: -215px;
+    top: -214px;
     left: 116px;
+    bottom: 0;
     border-radius: 50%;
     position: relative;
     background-color: #00FFC6;
@@ -194,7 +183,6 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
     background-color: #1A374D;
 }
 
@@ -206,20 +194,19 @@ footer .social-media {
 }
 
 footer .social-media a {
-    color: #00FFF6;
+    color: white;
     text-decoration: none;
+    transition: .5s;
 }
 
 footer .social-media a:hover {
     color: #FE7E6D;
-    text-decoration: underline;
 }
 
 footer .author {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 footer .author h3 {
@@ -236,31 +223,22 @@ footer .author img {
 }
 
 footer p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /* ======================================== KEYFRAMES ======================================== */
 
 @keyframes circle {
-    0% {
-        top: -215px;
-        left: 117px;
-
+    20% {
+        transform: translate(120px, 200px);
     }
 
-    25% {
-        top: -15px;
-        left: 238px;
-    }
-
-    58% {
-        top: -15px;
-        left: -2px;
+    55% {
+        transform: translate(-120px, 200px);
     }
 
     100% {
-        top: -215px;
-        left: 117px;
+        transform: translate(0, 0);
     }
 }
 
