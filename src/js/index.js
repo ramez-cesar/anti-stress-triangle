@@ -7,6 +7,7 @@ const counter = document.querySelector('.counter')
 const runningCircle = document.querySelector('.running-circle')
 const btnPlay = document.querySelector('.play')
 const btnStop = document.querySelector('.stop')
+const btnReturnHome = document.querySelector('.return-home')
 
 
 let timerId
@@ -16,6 +17,12 @@ let initialCounter = 2
 
 
 buttonStart.addEventListener('click', () => {
+    mainContainer.style.animationName = 'animation-display'
+    animationDisplay()
+})
+
+btnReturnHome.addEventListener('click', () => {
+    mainContainer.style.animationName = ''
     animationDisplay()
 })
 
@@ -23,6 +30,7 @@ buttonStart.addEventListener('click', () => {
 btnPlay.addEventListener('click', () => {
     btnPlay.style.display = 'none'
     btnStop.style.display = 'block'
+    btnReturnHome.style.opacity = 0
     runningCircle.classList.add('go-to')
 
     startCounter()
@@ -38,6 +46,7 @@ btnPlay.addEventListener('click', () => {
 btnStop.addEventListener('click', () => {
     btnPlay.style.display = 'block'
     btnStop.style.display = 'none'
+    btnReturnHome.style.opacity = 1
     runningCircle.classList.remove('go-to')
 
     clearInterval(intervalIdCounter)
@@ -78,12 +87,17 @@ function startCounter() {
 
 
 function animationDisplay() {
-    mainContainer.style.animationName = 'delete'
-    mainContainer.style.animationDuration = '2s'
-
-    setTimeout(() => {
-        mainContainer.innerHTML = ''
-        footer.innerHTML = ''
-        containerTriangle.style.display = 'flex'
-    }, 1600);
+    if(mainContainer.style.animationName === 'animation-display') {
+        mainContainer.style.animationDuration = '2s'
+        
+        setTimeout(() => {
+            mainContainer.style.display = 'none'
+            footer.style.display = 'none'
+            containerTriangle.style.display = 'flex'
+        }, 1600);
+    } else {
+        mainContainer.style.display = 'block'
+        footer.style.display = 'flex'
+        containerTriangle.style.display = 'none'
+    }
 }
