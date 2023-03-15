@@ -113,21 +113,20 @@ main .effects-description-container {
 }
 
 .container-triangle .instructions {
-    top: 235px;
     width: 100px;
     color: white;
     font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 50px;
     position: absolute;
     letter-spacing: .5px;
 }
 
 .container-triangle .counter {
-    top: 290px;
     font-size: 1.8rem;
-    font-weight: 500;
     color: #1AD7DB;
     font-weight: 800;
+    margin-top: 50px;
     position: absolute;
     letter-spacing: .5px;
 }
