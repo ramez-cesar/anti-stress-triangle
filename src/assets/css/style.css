@@ -163,10 +163,19 @@ main .effects-description-container {
     background-image: linear-gradient(to right top, #22577a, #1a6a89, #177d95, #22909f, #38a3a5);   
 }
 
-.stop {
+.container-triangle .stop {
     display: none;
     padding: 6px 25px;
     background-image: linear-gradient(to right top, #cd104d, #df3244, #ed4e3a, #f7692e, #fd841f);
+}
+
+.container-triangle .return-home {
+    border: none;
+    color: white;
+    margin-top: 15px;
+    background-color: transparent;
+    transition: .5s;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container-triangle .triangle .go-to {
@@ -243,7 +252,7 @@ footer p {
     }
 }
 
-@keyframes delete {
+@keyframes animation-display {
     0% {
         opacity: 1;
     }
