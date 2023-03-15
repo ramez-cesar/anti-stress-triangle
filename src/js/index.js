@@ -17,7 +17,6 @@ let initialCounter = 2
 
 buttonStart.addEventListener('click', () => {
     animationDisplay()
-    btnStop.style.display = 'none'
 })
 
 
@@ -54,24 +53,24 @@ function instructionGenerator() {
     
     timerId = setTimeout(() => {
         instructions.textContent = 'Mantén la respiración'
-    }, 5600);
+    }, 4500);
     
     timerId = setTimeout(() => {
         instructions.textContent = 'Exhala lentamente'
-    }, 13000);
+    }, 12200);
 }
 
 
 function startCounter() {
     if(counter.textContent === '') {
-        counter.textContent = 1
+        counter.textContent = 'R: 1'
         intervalIdCounter = setInterval(() => {
-            counter.textContent = initialCounter
+            counter.textContent = `R: ${initialCounter}`
             initialCounter++
         }, 22000)
     } else {
         intervalIdCounter = setInterval(() => {
-            counter.textContent = initialCounter
+            counter.textContent = `R: ${initialCounter}`
             initialCounter++
         }, 22000)
     }
