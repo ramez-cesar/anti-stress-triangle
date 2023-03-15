@@ -24,7 +24,7 @@ main .description-container {
     padding: 10px 20px 0;
     background-color: #1A374D;
     clip-path: polygon(100% 0, 100% 88%, 24% 100%, 0 88%, 0 0);
-    background-image: url('../images/Imagen1.png');
+    background-image: url('../images/meditation.png');
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
