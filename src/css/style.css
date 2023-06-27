@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #d7d7d7;
+}
+
+main p, a, h4, button {
+  font-size: 1.3rem;
+  letter-spacing: .3px;
+}
+
+main .description-container {
+  width: 100%;
+  height: 230px;
+  padding: 10px 20px 0;
+  clip-path: polygon(100% 0, 100% 88%, 24% 100%, 0 88%, 0 0);
+  background-image: url('../assets/images/moon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main .description-container img {
+  width: 45px;
+  border-radius: 50%;
+  box-shadow: 0 0px 20px 0px #1ea3e1;
+}
+
+main .description-container h1 {
+  color: white;
+  margin-top: 15px;
+  font-size: 2.2rem;
+  word-spacing: 4px;
+  text-transform: uppercase;
+}
+
+main .description-container h1 span {
+  color: #00FFF6;
+  text-decoration: underline;
+}
+
+main .description-container p {
+  margin-top: 10px;
+  color: #CBE4DE;
+  word-spacing: 2px;
+  letter-spacing: .5px;
+}
+
+main .start {
+  color: #ECECEC;
+  margin-top: 15px;
+  padding: 6px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1B6B93;
+  border: 1px solid #4FC0D0;
+  transition: 0.6s;
+}
+
+main .start:hover {
+  background-color: #0079FF;
+  border: 1px solid #4F709C;
+}
+
+main .description {
+  padding: 25px;
+}
+
+main .instruction-container {
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main .instruction-container h2 {
+  font-size: 2rem;
+}
+
+main .instruction-container > div {
+  margin: 0 35px;
+  padding: 15px 20px;
+  border: 1px solid #b5b5b5;
+  border-radius: 8px;
+  box-shadow: 5px 5px 8px #567189;
+  background-color: #c7c7c7;
+}
+
+main .instruction-container > div h4 {
+  margin-bottom: 15px;
+}
+
+main .effects-description-container {
+  margin-top: 40px;
+  padding: 60px 25px 35px;
+  background-color: #bfbfbf;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+/* ======================================== TRIANGLE ======================================== */
+
+.container-triangle {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #090015;
+}
+
+.container-triangle .instructions {
+  width: 100px;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  position: absolute;
+  letter-spacing: .5px;
+}
+
+.container-triangle .counter {
+  font-size: 1.8rem;
+  color: #1AD7DB;
+  font-weight: 800;
+  margin-top: 50px;
+  position: absolute;
+  letter-spacing: .5px;
+}
+
+.container-triangle .triangle {
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.container-triangle .triangle img {
+  width: 270px;
+  filter: drop-shadow(0px 0px 30px #A91079);
+}
+
+.container-triangle .triangle .running-circle {
+  width: 17px;
+  height: 17px;
+  top: -232px;
+  left: 126px;
+  bottom: 0;
+  border-radius: 50%;
+  position: relative;
+  background-color: #00FFC6;
+}
+
+.container-triangle .play, .stop {
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 6px 30px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1B6B93;
+  transition: 0.6s;
+}
+
+.container-triangle .play:hover {
+  background-color: #0079FF;
+}
+
+.container-triangle .stop {
+  display: none;
+  padding: 6px 25px;
+  background-image: linear-gradient(to right top, #cd104d, #df3244, #ed4e3a, #f7692e, #fd841f);
+}
+
+.container-triangle .return-home {
+  border: none;
+  color: white;
+  margin-top: 15px;
+  background-color: transparent;
+  transition: .5s;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.container-triangle .return-home:hover {
+  color: #fd841f;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.container-triangle .triangle .go-to {
+  animation: circle 22s;
+  animation-iteration-count: infinite;
+  transition: 1s;
+}
+
+/* ======================================== FOOTER ======================================== */
+
+footer {
+  width: 100%;
+  height: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1A374D;
+}
+
+footer .social-media {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer .social-media a {
+  color: white;
+  text-decoration: none;
+  transition: .5s;
+}
+
+footer .social-media a:hover {
+  color: #FE7E6D;
+}
+
+footer .author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .author h3 {
+  font-size: 2rem;
+  letter-spacing: .8px;
+  word-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+footer .author img {
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+footer p {
+  margin-bottom: 15px;
+}
+
+/* ======================================== KEYFRAMES ======================================== */
+
+@keyframes circle {
+  20% {
+    transform: translate(130px, 218px);
+  }
+
+  55% {
+    transform: translate(-130px, 218px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes animation-display {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+} 
