@@ -8,96 +8,93 @@ const runningCircle = document.querySelector('.running-circle')
 const btnPlay = document.querySelector('.play')
 const btnStop = document.querySelector('.stop')
 const btnReturnHome = document.querySelector('.return-home')
-
+const copyright = document.querySelector('.copyright')
 
 let timerId
 let intervalIdCounter
 let intervalIdInstruction
 let initialCounter = 2
 
-
 buttonStart.addEventListener('click', () => {
-    mainContainer.style.animationName = 'animation-display'
-    animationDisplay()
+  mainContainer.style.animationName = 'animation-display'
+  animationDisplay()
 })
 
 btnReturnHome.addEventListener('click', () => {
-    mainContainer.style.animationName = ''
-    animationDisplay()
+  mainContainer.style.animationName = ''
+  animationDisplay()
 })
-
 
 btnPlay.addEventListener('click', () => {
-    btnPlay.style.display = 'none'
-    btnStop.style.display = 'block'
-    btnReturnHome.style.opacity = 0
-    runningCircle.classList.add('go-to')
+  btnPlay.style.display = 'none'
+  btnStop.style.display = 'block'
+  btnReturnHome.style.opacity = 0
+  runningCircle.classList.add('go-to')
 
-    startCounter()
-    
+  startCounter()
+  
+  instructionGenerator()
+
+  intervalIdInstruction = setInterval(() => {
     instructionGenerator()
-
-    intervalIdInstruction = setInterval(() => {
-        instructionGenerator()
-    }, 22000)
+  }, 22000)
 })
-
 
 btnStop.addEventListener('click', () => {
-    btnPlay.style.display = 'block'
-    btnStop.style.display = 'none'
-    btnReturnHome.style.opacity = 1
-    runningCircle.classList.remove('go-to')
+  btnPlay.style.display = 'block'
+  btnStop.style.display = 'none'
+  btnReturnHome.style.opacity = 1
+  runningCircle.classList.remove('go-to')
 
-    clearInterval(intervalIdCounter)
+  clearInterval(intervalIdCounter)
 
-    clearTimeout(timerId)
+  clearTimeout(timerId)
 
-    clearInterval(intervalIdInstruction)
+  clearInterval(intervalIdInstruction)
 })
 
-
 function instructionGenerator() {
-    instructions.textContent = 'Respira profundo'
-    
-    timerId = setTimeout(() => {
-        instructions.textContent = 'Mantén la respiración'
-    }, 4500);
-    
-    timerId = setTimeout(() => {
-        instructions.textContent = 'Exhala lentamente'
-    }, 12200);
+  instructions.textContent = 'Respira profundo'
+  
+  timerId = setTimeout(() => {
+    instructions.textContent = 'Mantén la respiración'
+  }, 4500);
+  
+  timerId = setTimeout(() => {
+    instructions.textContent = 'Exhala lentamente'
+  }, 12200);
 }
-
 
 function startCounter() {
-    if(counter.textContent === '') {
-        counter.textContent = 'R: 1'
-        intervalIdCounter = setInterval(() => {
-            counter.textContent = `R: ${initialCounter}`
-            initialCounter++
-        }, 22000)
-    } else {
-        intervalIdCounter = setInterval(() => {
-            counter.textContent = `R: ${initialCounter}`
-            initialCounter++
-        }, 22000)
-    }
+  if(counter.textContent === '') {
+    counter.textContent = 'R: 1'
+    intervalIdCounter = setInterval(() => {
+      counter.textContent = `R: ${initialCounter}`
+      initialCounter++
+    }, 22000)
+  } else {
+    intervalIdCounter = setInterval(() => {
+      counter.textContent = `R: ${initialCounter}`
+      initialCounter++
+    }, 22000)
+  }
 }
-
 
 function animationDisplay() {
-    if(mainContainer.style.animationName === 'animation-display') {
-        mainContainer.style.animationDuration = '2s'
-        
-        setTimeout(() => {
-            mainContainer.style.display = 'none'
-            footer.style.display = 'none'
-            containerTriangle.style.display = 'flex'
-        }, 1600);
-    } else {
-        mainContainer.style.display = 'block'
-        footer.style.display = 'flex'
-        containerTriangle.style.display = 'none'
-    }
+  if(mainContainer.style.animationName === 'animation-display') {
+    mainContainer.style.animationDuration = '2s'
+    
+    setTimeout(() => {
+      mainContainer.style.display = 'none'
+      footer.style.display = 'none'
+      containerTriangle.style.display = 'flex'
+    }, 1600);
+  } else {
+    mainContainer.style.display = 'block'
+    footer.style.display = 'flex'
+    containerTriangle.style.display = 'none'
+  }
 }
+
+const date = new Date()
+copyright.textContent = `© ${date.getFullYear()} César Ramez`
